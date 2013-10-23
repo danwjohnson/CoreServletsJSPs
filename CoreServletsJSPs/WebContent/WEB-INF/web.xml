@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>CoreServletsJSPs</display-name>
+  <servlet>
+  	<servlet-name>ServletTemplate</servlet-name>
+  	<servlet-class>com.coreservlets.chap03.ServletTemplate</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet>
+  	<servlet-name>HelloWorld</servlet-name>
+  	<servlet-class>com.coreservlets.chap03.HelloWorld</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet>
+  	<servlet-name>HelloServlet</servlet-name>
+  	<servlet-class>com.coreservlets.chap03.HelloServlet</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet>
+  	<servlet-name>HelloServlet3</servlet-name>
+  	<servlet-class>com.coreservlets.chap03.HelloServlet3</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet>
+  	<servlet-name>LotteryNumbers</servlet-name>
+  	<servlet-class>com.coreservlets.chap03.LotteryNumbers</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
+  
+  
+  <servlet-mapping>
+  	<servlet-name>ServletTemplate</servlet-name>
+  	<url-pattern>/servlet/ServletTemplate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>HelloWorld</servlet-name>
+  	<url-pattern>/servlet/HelloWorld</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>HelloServlet</servlet-name>
+  	<url-pattern>/servlet/HelloServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>HelloServlet3</servlet-name>
+  	<url-pattern>/servlet/HelloServlet3</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LotteryNumbers</servlet-name>
+  	<url-pattern>/servlet/LotteryNumbers</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
