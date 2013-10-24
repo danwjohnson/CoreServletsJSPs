@@ -26,7 +26,16 @@
   	<servlet-class>com.coreservlets.chap03.LotteryNumbers</servlet-class>
   	<load-on-startup>2</load-on-startup>
   </servlet>
-  
+  <servlet>
+  	<servlet-name>UserIDs</servlet-name>
+  	<servlet-class>com.coreservlets.chap03.UserIDs</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet>
+  	<servlet-name>ThreeParams</servlet-name>
+  	<servlet-class>com.coreservlets.chap04.ThreeParams</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>ServletTemplate</servlet-name>
@@ -47,6 +56,14 @@
   <servlet-mapping>
   	<servlet-name>LotteryNumbers</servlet-name>
   	<url-pattern>/servlet/LotteryNumbers</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UserIDs</servlet-name>
+  	<url-pattern>/servlet/UserIDs</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ThreeParams</servlet-name>
+  	<url-pattern>/servlet/ThreeParams</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>
