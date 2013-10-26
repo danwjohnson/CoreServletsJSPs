@@ -36,6 +36,11 @@
   	<servlet-class>com.coreservlets.chap04.ThreeParams</servlet-class>
   	<load-on-startup>2</load-on-startup>
   </servlet>
+  <servlet>
+  	<servlet-name>ShowParameters</servlet-name>
+  	<servlet-class>com.coreservlets.chap04.ShowParameters</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>ServletTemplate</servlet-name>
@@ -64,6 +69,10 @@
   <servlet-mapping>
   	<servlet-name>ThreeParams</servlet-name>
   	<url-pattern>/servlet/ThreeParams</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ShowParameters</servlet-name>
+  	<url-pattern>/servlet/ShowParameters</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>
