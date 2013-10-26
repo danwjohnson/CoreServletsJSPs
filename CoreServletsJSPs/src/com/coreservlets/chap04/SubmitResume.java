@@ -2,6 +2,7 @@ package com.coreservlets.chap04;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.StringTokenizer;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +20,7 @@ public class SubmitResume extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-	public void doGet(HttpServletRequest request,
+	public void doPost(HttpServletRequest request,
 					HttpServletResponse response)
 		throws ServletException, IOException {
 		
@@ -61,7 +62,7 @@ public class SubmitResume extends HttpServlet {
 		String title = request.getParameter("title");
 		title = replaceIfMissing(title, "Loser");
 		String email = request.getParameter("email");
-		email = repalceIfMissing(email, "contact@hot-computer-jobs.com");
+		email = replaceIfMissing(email, "contact@hot-computer-jobs.com");
 		String languages = request.getParameter("languages");
 		String skills = request.getParameter("skills");
 		skills = replaceIfMissing(skills, "Not many, obviously.");
@@ -99,25 +100,150 @@ public class SubmitResume extends HttpServlet {
 	 */
 	
 	private String makeStyleSheet(String headingFont,
-								int headingSize,
+								int heading1Size,
 								String bodyFont,
 								int bodySize,
 								String fgColor,
 								String bgColor) {
 	
-		int heading2Size = headingSize*7/10;
-		int heading3Size = headingSize*6/10;
+		int heading2Size = heading1Size*7/10;
+		int heading3Size = heading1Size*6/10;
 		String styleSheet =
 				"<STYLE TYPE=\"text/css\">\n" +
 				"<!--\n" +
-				".HEADING1 { font-size: " + headingSize + "px;\n" +
+				".HEADING1 { font-size: " + heading1Size + "px;\n" +
 				"			 font-weight: bold;\n" +
-				"			 font-family: " + headingFont;	
-		
-		// TODO - pick up from here.
+				"			 font-family: " + headingFont +
+				"Arial, Helvetica, san-serif;\n}\n" +
+				".HEADING2 { font-size: " + heading2Size + "px;\n" +
+				"			 font-weight: bold;\n" +
+				"			 font-family: " + headingFont +
+				"Arial, Helvetica, san-serif;\n}\n" +
+				".HEADING3 { font-size: " + heading3Size + "px;\n" +
+				"			 font-weight: bold;\n" +
+				"			 font-family: " + headingFont +
+				"Arial, Helvetica, san-serif;\n}\n" +
+				"BODY { color: " + fgColor + ";\n" +
+				"       background-color: " + bgColor + ";\n" +
+				"       font-size: " + bodySize + "px;\n" +
+				"       font-family: " + bodyFont +
+				" Times New Roman, Times, serif;\n}\n" +
+				"A:hover { color: red; }\n" +
+				"-->\n" +
+				"</STYLE>";
 		
 		return styleSheet;
 		
-	}
+	} // end makeStyleSheet()
+	
+	
+	/**
+	 * Replaces null strings (no such parameter name) or
+	 * empty strings (e.g., if textField was blank) with
+	 * the replacement. Returns the original string otherwise.
+	 */
+	private String replaceIfMissing(String orig, String replacement) {
+		
+		if ((orig == null) || (orig.trim().equals("")))
+			return (replacement);
+		else
+			return (orig);
+	
+	} // end replaceIfMissing()
+	
+	
+	/**
+	 * Replaces null strings, empty strings, or the string
+	 * "default" with the replacement.
+	 * Returns the original string otherwise
+	 */
+	private String replaceIfMissingOrDefault (String orig, String replacement) {
+		
+		if ((orig == null) ||
+			(orig.trim().equals("")) ||
+			(orig.equals("default"))) 
+			
+			return replacement;
+		
+		else
+			return (orig + ", ");
+		
+	} // end replaceIfMissingOrDefault()
+	
+	
+	/**
+	 * Takes a string representing an integer and returns it
+	 * as an int.  Returns a default if the string is null
+	 * or in an illegal format
+	 */
+	private int getSize(String sizeString, int defaultSize) {
+		
+		try {
+			return(Integer.parseInt(sizeString));
+		} catch (NumberFormatException nfe) {
+			return defaultSize;
+		} // end try/catch
+		
+	} // end getSize()
+	
+	
+	/**
+	 * Given "Java, C++, Lisp", "Java C++ Lisp" or
+	 * "Java, C++, Lisp" returns
+	 * "<UL>
+	 * 	  <LI>Java
+	 *    <LI>C++
+	 *    <LI>Lisp
+	 *  </UL>
+	 */
+	private String makeList(String listItems) {
+		
+		StringTokenizer tokenizer =
+				new StringTokenizer(listItems, ", ");
+		String list = "<UL>\n";
+		while(tokenizer.hasMoreElements())
+			list = list + "  <LI>" + tokenizer.nextToken() + "\n";
+		list = list + "</UL>";
+		return list;
+		
+	} // end makeList()
+	
+	
+	/**
+	 * Shows a confirmation page when the use clicks the
+	 * "Submit" button.
+	 */
+	private void showConfirmation(HttpServletRequest request,
+								PrintWriter out) {
+		
+		String title = "Submission Confirmed.";
+		out.println(ServletUtilities.headWithTitle(title) +
+				"<BODY>\n" +
+				"<H1>" + title + "</H1>\n" +
+				"Your resume should appear online within\n" +
+				"24 hours.  If it doesn't, try submitting\n" +
+				"again with a different email address.\n" +
+				"</BODY></HTML>");
+		
+	} // end showConfirmation()
+	
+	
+	/**
+	 * Why it is bad to give your email address to untrusted sites
+	 */
+	private void storeResume(HttpServletRequest request) {
+		
+		String email = request.getParameter("email");
+		putInSpamList(email);
+		
+	} // end storeResume()
+	
+	
+	private void putInSpamList(String emailAddress) {
+		
+		// Code removed to protect the guilty.
+		
+	} // end putInSpamList()
+	
 	
 } // end SubmitResume class

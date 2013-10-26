@@ -41,6 +41,11 @@
   	<servlet-class>com.coreservlets.chap04.ShowParameters</servlet-class>
   	<load-on-startup>2</load-on-startup>
   </servlet>
+  <servlet>
+  	<servlet-name>SubmitResume</servlet-name>
+  	<servlet-class>com.coreservlets.chap04.SubmitResume</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>ServletTemplate</servlet-name>
@@ -73,6 +78,10 @@
   <servlet-mapping>
   	<servlet-name>ShowParameters</servlet-name>
   	<url-pattern>/servlet/ShowParameters</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SubmitResume</servlet-name>
+  	<url-pattern>/servlet/SubmitResume</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>
