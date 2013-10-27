@@ -46,6 +46,16 @@
   	<servlet-class>com.coreservlets.chap04.SubmitResume</servlet-class>
   	<load-on-startup>2</load-on-startup>
   </servlet>
+  <servlet>
+  	<servlet-name>BadCodeServlet</servlet-name>
+  	<servlet-class>com.coreservlets.chap04.BadCodeServlet</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet>
+  	<servlet-name>GoodCodeServlet</servlet-name>
+  	<servlet-class>com.coreservlets.chap04.GoodCodeServlet</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>ServletTemplate</servlet-name>
@@ -82,6 +92,10 @@
   <servlet-mapping>
   	<servlet-name>SubmitResume</servlet-name>
   	<url-pattern>/servlet/SubmitResume</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>GoodCodeServlet</servlet-name>
+  	<url-pattern>/servlet/GoodCodeServlet</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>
