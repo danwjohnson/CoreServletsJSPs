@@ -56,6 +56,11 @@
   	<servlet-class>com.coreservlets.chap04.GoodCodeServlet</servlet-class>
   	<load-on-startup>2</load-on-startup>
   </servlet>
+  <servlet>
+  	<servlet-name>SubmitInsuranceInfo</servlet-name>
+  	<servlet-class>com.coreservlets.chap04.SubmitInsuranceInfo</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>ServletTemplate</servlet-name>
@@ -96,6 +101,10 @@
   <servlet-mapping>
   	<servlet-name>GoodCodeServlet</servlet-name>
   	<url-pattern>/servlet/GoodCodeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SubmitInsuranceInfo</servlet-name>
+  	<url-pattern>/servlet/SubmitInsuranceInfo</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>
