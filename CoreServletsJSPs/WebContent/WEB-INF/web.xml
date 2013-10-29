@@ -71,6 +71,11 @@
   	<servlet-class>com.coreservlets.chap05.ShowRequestHeaders</servlet-class>
   	<load-on-startup>2</load-on-startup>
   </servlet>
+  <servlet>
+  	<servlet-name>LongServlet</servlet-name>
+  	<servlet-class>com.coreservlets.chap05.LongServlet</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>ServletTemplate</servlet-name>
@@ -123,6 +128,10 @@
   <servlet-mapping>
   	<servlet-name>ShowRequestHeaders</servlet-name>
   	<url-pattern>/servlet/ShowRequestHeaders</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LongServlet</servlet-name>
+  	<url-pattern>/servlet/LongServlet</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>
