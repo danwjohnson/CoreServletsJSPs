@@ -96,7 +96,16 @@
   	<servlet-class>com.coreservlets.chap06.WrongDestination</servlet-class>
   	<load-on-startup>2</load-on-startup>
   </servlet>
-  
+  <servlet>
+  	<servlet-name>SearchEngineForm</servlet-name>
+  	<servlet-class>com.coreservlets.chap06.SearchEngineForm</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet>
+  	<servlet-name>SearchEngines</servlet-name>
+  	<servlet-class>com.coreservlets.chap06.SearchEngines</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>ServletTemplate</servlet-name>
@@ -169,6 +178,14 @@
   <servlet-mapping>
   	<servlet-name>WrongDestination</servlet-name>
   	<url-pattern>/servlet/WrongDestination</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SearchEngineForm</servlet-name>
+  	<url-pattern>/servlet/SearchEngineForm</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SearchEngines</servlet-name>
+  	<url-pattern>/servlet/SearchEngines</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>
