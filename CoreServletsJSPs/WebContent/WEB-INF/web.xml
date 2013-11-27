@@ -76,6 +76,22 @@
   	<servlet-class>com.coreservlets.chap05.LongServlet</servlet-class>
   	<load-on-startup>2</load-on-startup>
   </servlet>
+  <servlet>
+  	<servlet-name>BrowserInsult</servlet-name>
+  	<servlet-class>com.coreservlets.chap05.BrowserInsult</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet>
+  	<servlet-name>CustomizeImage</servlet-name>
+  	<servlet-class>com.coreservlets.chap05.CustomizeImage</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet>
+  	<servlet-name>ShowCGIVariables</servlet-name>
+  	<servlet-class>com.coreservlets.chap05.ShowCGIVariables</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
+  
   
   <servlet-mapping>
   	<servlet-name>ServletTemplate</servlet-name>
@@ -132,6 +148,18 @@
   <servlet-mapping>
   	<servlet-name>LongServlet</servlet-name>
   	<url-pattern>/servlet/LongServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>BrowserInsult</servlet-name>
+  	<url-pattern>/servlet/BrowserInsult</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CustomizeImage</servlet-name>
+  	<url-pattern>/servlet/CustomizeImage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ShowCGIVariables</servlet-name>
+  	<url-pattern>/servlet/ShowCGIVariables</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>
