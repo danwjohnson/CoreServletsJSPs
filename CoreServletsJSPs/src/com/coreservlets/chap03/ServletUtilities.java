@@ -2,6 +2,8 @@
 
 package com.coreservlets.chap03;
 
+import javax.servlet.http.HttpServletRequest;
+
 public class ServletUtilities {
 
 	public static final String DOCTYPE =
@@ -86,5 +88,34 @@ public class ServletUtilities {
 		return(flag);
 	
 	} // end hasSpecialCharacters()
+	
+	
+	/**
+	 * Read a parameter with the specified name, convert it
+	 * to an int, and return it.  Return the designated default
+	 * value if the parameter doesn't exist or if it is an
+	 * illegal integer format
+	 */
+	
+	public static int getIntParameter (HttpServletRequest request,
+									   String paramName,
+									   int defaultValue) {
+		
+		String paramString = request.getParameter(paramName);
+		int paramValue;
+		try {
+			
+			paramValue = Integer.parseInt(paramString);
+			
+		} catch(NumberFormatException nfe) {
+			
+			// null or bad format
+			paramValue = defaultValue;
+			
+		} // end try/catch
+		
+		return paramValue;
+		
+	} // end geIntParameter()
 	
 } // end ServletUtilities class
