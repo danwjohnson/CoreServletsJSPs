@@ -72,7 +72,7 @@ public class PrimeNumberServlet extends HttpServlet{
 		
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		String title = "Some" + numDigits + "-Digit Prime Numbers";
+		String title = "Some " + numDigits + "-Digit Prime Numbers";
 		out.println(ServletUtilities.headWithTitle(title) + 
 				"<BODY BGCOLOR=\"#FDF5E6\">\n" +
 				"<H2 ALIGN=CENTER>" + title + "</H2>\n" +
@@ -106,11 +106,11 @@ public class PrimeNumberServlet extends HttpServlet{
 									int numPrimes,
 									int numDigits) {
 		
-		for (int i = 0; i < primeListCollection.size(); i++ ) {
+		synchronized(primeListCollection) {
+			for (int i = 0; i < primeListCollection.size(); i++ ) {
 			
-			PrimeList primes =
-					(PrimeList)primeListCollection.get(i);
-			synchronized(primeListCollection) {
+				PrimeList primes =
+						(PrimeList)primeListCollection.get(i);
 				
 				if ((numPrimes == primes.numPrimes()) &&
 					(numDigits == primes.numDigits()))
@@ -121,8 +121,6 @@ public class PrimeNumberServlet extends HttpServlet{
 			return null;
 			
 		} // end for loop
-		
-		return null;
 		
 	} // end findPrimeList()
 	
