@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JPEG Generation Service</title>
+</head>
+<body bgcolor="#FDF5E6">
+<h1 align="center">JPEG Generation Service</h1>
+Welcome to the <i>free</i> trial edition of our JPEG
+generation service.  Enter a message, a font name,
+and a font size below, then submit the form.  You will
+be returned a JPEG image showing the message in the 
+designated font, with an oblique "shadow" of the message
+behind it.  Once you get an image you are satisfied with,
+right click on it (or click while holding down the SHIFT key) 
+to save it to your local disk.
+<p>
+The server is currently on Linux, so the font name must
+be either a standard Java font name (e.g., Serif, SansSerif,
+or Monospaced) or a Linux font name.
+Unrecognized font names will revert to Serif.  Press the
+"Show Font List" button for a complete list.
+</p>
+
+<form action="/CoreServletsJSPs/servlet/ShadowedText">
+
+	<center>
+	Message:
+	<input type="text" name="message"><br>
+	Font Name:
+	<input type="text" name="fontName" value="Serif"><br>
+	Font Size:
+	<input type="text" name="fontSize" value="90"><p>
+	<input type="submit" value="Build Image"><p>
+	<input type="submit" name="showList" value="Show Font List">
+	</center>
+
+</form>
+
+</body>
+</html>

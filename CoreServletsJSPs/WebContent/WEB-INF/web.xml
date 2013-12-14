@@ -116,6 +116,11 @@
   	<servlet-class>com.coreservlets.chap07.PrimeNumberServlet</servlet-class>
   	<load-on-startup>2</load-on-startup>
   </servlet>
+   <servlet>
+  	<servlet-name>ShadowedText</servlet-name>
+  	<servlet-class>com.coreservlets.chap07.ShadowedText</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>ServletTemplate</servlet-name>
@@ -204,6 +209,10 @@
   <servlet-mapping>
   	<servlet-name>PrimeNumberServlet</servlet-name>
   	<url-pattern>/servlet/PrimeNumberServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ShadowedText</servlet-name>
+  	<url-pattern>/servlet/ShadowedText</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>
