@@ -64,7 +64,7 @@ public class PrimeNumberServlet extends HttpServlet{
 	
 		ArrayList currentPrimes = primeList.getPrimes();
 		int numCurrentPrimes = currentPrimes.size();
-		int numPrimesRemaining = numPrimes = numCurrentPrimes;
+		int numPrimesRemaining = numPrimes - numCurrentPrimes;
 		boolean isLastResult = (numPrimesRemaining == 0);
 		if (!isLastResult) {
 			response.setIntHeader("Refresh", 5);
