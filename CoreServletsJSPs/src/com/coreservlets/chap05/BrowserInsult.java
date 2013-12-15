@@ -57,3 +57,4 @@ public class BrowserInsult extends HttpServlet {
 	} // end doGet()
 	
 } // end BrowserInsult class
+
