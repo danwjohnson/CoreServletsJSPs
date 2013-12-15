@@ -126,6 +126,11 @@
   	<servlet-class>com.coreservlets.chap08.RepeatVisitor</servlet-class>
   	<load-on-startup>2</load-on-startup>
   </servlet>
+  <servlet>
+  	<servlet-name>CookieTest</servlet-name>
+  	<servlet-class>com.coreservlets.chap08.CookieTest</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
 
   
   <servlet-mapping>
@@ -223,6 +228,10 @@
   <servlet-mapping>
   	<servlet-name>RepeatVisitor</servlet-name>
   	<url-pattern>/servlet/RepeatVisitor</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CookieTest</servlet-name>
+  	<url-pattern>/servlet/CookieTest</url-pattern>
   </servlet-mapping>
 
  
