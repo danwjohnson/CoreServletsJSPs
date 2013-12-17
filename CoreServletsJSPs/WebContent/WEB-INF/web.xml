@@ -136,6 +136,21 @@
   	<servlet-class>com.coreservlets.chap08.RepeatVisitor2</servlet-class>
   	<load-on-startup>2</load-on-startup>
   </servlet>
+  <servlet>
+  	<servlet-name>ClientAccessCounts</servlet-name>
+  	<servlet-class>com.coreservlets.chap08.ClientAccessCounts</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet>
+  	<servlet-name>RegistrationForm</servlet-name>
+  	<servlet-class>com.coreservlets.chap08.RegistrationForm</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet>
+  	<servlet-name>RegistrationServlet</servlet-name>
+  	<servlet-class>com.coreservlets.chap08.RegistrationServlet</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
 
   
   <servlet-mapping>
@@ -241,6 +256,18 @@
   <servlet-mapping>
   	<servlet-name>RepeatVisitor2</servlet-name>
   	<url-pattern>/servlet/RepeatVisitor2</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ClientAccessCounts</servlet-name>
+  	<url-pattern>/servlet/ClientAccessCounts</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RegistrationForm</servlet-name>
+  	<url-pattern>/servlet/RegistrationForm</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RegistrationServlet</servlet-name>
+  	<url-pattern>/servlet/RegistrationServlet</url-pattern>
   </servlet-mapping>
 
  
