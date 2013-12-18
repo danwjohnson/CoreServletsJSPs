@@ -156,6 +156,11 @@
   	<servlet-class>com.coreservlets.chap09.ShowSession</servlet-class>
   	<load-on-startup>2</load-on-startup>
   </servlet>
+  <servlet>
+  	<servlet-name>ShowItems</servlet-name>
+  	<servlet-class>com.coreservlets.chap09.ShowItems</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
 
   
   <servlet-mapping>
@@ -278,8 +283,11 @@
   	<servlet-name>ShowSession</servlet-name>
   	<url-pattern>/servlet/ShowSession</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ShowItems</servlet-name>
+  	<url-pattern>/servlet/ShowItems</url-pattern>
+  </servlet-mapping>
   
-
  
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
