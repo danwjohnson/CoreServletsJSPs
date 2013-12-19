@@ -161,6 +161,16 @@
   	<servlet-class>com.coreservlets.chap09.ShowItems</servlet-class>
   	<load-on-startup>2</load-on-startup>
   </servlet>
+  <servlet>
+  	<servlet-name>KidsBookPage</servlet-name>
+  	<servlet-class>com.coreservlets.chap09.KidsBookPage</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet>
+  	<servlet-name>TechBooksPage</servlet-name>
+  	<servlet-class>com.coreservlets.chap09.TechBooksPage</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
 
   
   <servlet-mapping>
@@ -286,6 +296,14 @@
   <servlet-mapping>
   	<servlet-name>ShowItems</servlet-name>
   	<url-pattern>/servlet/ShowItems</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>KidsBookPage</servlet-name>
+  	<url-pattern>/servlet/KidsBookPage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>TechBooksPage</servlet-name>
+  	<url-pattern>/servlet/TechBooksPage</url-pattern>
   </servlet-mapping>
   
  
