@@ -171,6 +171,11 @@
   	<servlet-class>com.coreservlets.chap09.TechBooksPage</servlet-class>
   	<load-on-startup>2</load-on-startup>
   </servlet>
+  <servlet>
+  	<servlet-name>OrderPage</servlet-name>
+  	<servlet-class>com.coreservlets.chap09.OrderPage</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
 
   
   <servlet-mapping>
@@ -305,7 +310,10 @@
   	<servlet-name>TechBooksPage</servlet-name>
   	<url-pattern>/servlet/TechBooksPage</url-pattern>
   </servlet-mapping>
-  
+  <servlet-mapping>
+  	<servlet-name>OrderPage</servlet-name>
+  	<url-pattern>/servlet/OrderPage</url-pattern>
+  </servlet-mapping>
  
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
